@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Blur My Screen</title>
+    <script src="./welcome.js" defer></script>
+    <link rel="shortcut icon" href="/assets/icons/blur-light.png" type="image/x-icon">
+    <style>
+        :root {
+            --bg-light: #f8f9fa;
+            --text-light: #212529;
+            --subtext-light: #495057;
+            --bg-dark: #121212;
+            --text-dark: #f1f1f1;
+            --subtext-dark: #aaaaaa;
+            --accent: #007bff;
+            --accent-hover: #0056b3;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: system-ui, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        [data-theme="light"] body {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        [data-theme="dark"] body {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1 .blur-image {
+            width: 128px;
+        }
+
+        p {
+            max-width: 400px;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        [data-theme="light"] p {
+            color: var(--subtext-light);
+        }
+
+        [data-theme="dark"] p {
+            color: var(--subtext-dark);
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: var(--accent);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-bottom: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .toggle-theme {
+            font-size: 0.9rem;
+            background: none;
+            color: inherit;
+            border: 1px solid currentColor;
+            border-radius: 5px;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .toggle-theme:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <div class="blur-image">
+                <img src="/assets/icons/blur-light.png" id="logoIcon" class="blur-image" alt="blur logo" />
+            </div>
+            Welcome to Blur My Screen
+        </h1>
+        <p>
+            This extension helps you quickly blur your screen for privacy. To get started, set a global passcode that
+            unlocks your screen.
+        </p>
+        <button type="button" id="openPopup">Set Passcode Now</button>
+        <button type="button" class="toggle-theme" id="themeToggle">🌞 Toggle Dark Mode</button>
+    </div>
+</body>
+
+</html>

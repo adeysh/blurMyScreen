@@ -1,0 +1,125 @@
+html.blurred,
+body.blurred {
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+.blur-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.blur-screen.visible {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.passcode-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.passcode-modal.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.passcode-box {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    color: #333;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    width: 300px;
+    animation: slideFade 0.3s ease;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.passcode-box input {
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.passcode-box input:focus {
+    border-color: #007bff;
+}
+
+.passcode-box input::placeholder {
+    color: #999;
+}
+
+.passcode-box button {
+    margin-top: 1.2rem;
+    padding: 0.75rem 1rem;
+    font-family: sans-serif;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.passcode-box button:hover {
+    background-color: #0056cc;
+}
+
+.passcode-box .error {
+    display: none;
+    color: red;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    background-color: rgb(255, 164, 164);
+    padding: 0.5rem 1.5rem;
+}
+
+.passcode-box .error.visible {
+    display: block;
+}

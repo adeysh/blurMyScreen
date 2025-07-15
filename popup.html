@@ -1,0 +1,123 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blur My Screen Settings</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            padding: 1rem;
+            width: 280px;
+            background-color: #f9f9fb;
+            color: #222;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        input[type="password"] {
+            padding: 0.6rem;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.4rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            padding: 0.6rem 1rem;
+            margin-top: 0.6rem;
+            font-size: 1rem;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056cc;
+        }
+
+        label {
+            font-size: 1rem;
+            display: block;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+
+        .status {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: green;
+            transition: all 0.2s ease;
+        }
+
+        #unlockSection {
+            margin-top: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 id="formTitle">Set Passcode</h3>
+
+        <div id="unlockSection" style="display: none;">
+            <h3>Unlock Screen</h3>
+            <input type="password" id="unlockPassInput" placeholder="Enter passcode" />
+            <button type="button" id="unlockBtn">Unlock</button>
+        </div>
+
+
+        <!-- For Set / Change -->
+        <div id="formSection">
+            <input type="password" id="currentPasscode" placeholder="Current passcode" style="display: none" />
+            <input type="password" id="passcode" placeholder="New passcode" />
+            <input type="password" id="confirmPasscode" placeholder="Confirm new passcode" />
+            <button type="button" id="savePasscode">Save</button>
+        </div>
+
+        <!-- Change button -->
+        <div id="changeSection">
+            <button type="button" id="changePasscodeBtn" style="display: none;">🔁 Change Passcode</button>
+        </div>
+
+        <div class="status" id="status"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+
+</html>
