@@ -29,8 +29,14 @@
             "run_at": "document_start"
         }
     ],
+    "icons": {
+        "128": "/assets/icons/blur-light.png"
+    },
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "/assets/icons/blur-light.png"
+        }
     },
     "web_accessible_resources": [
         {
