@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Blur My Screen",
     "version": "1.0",
-    "description": "Blur your screen instantly with a keypress (B).",
+    "description": "Blur your screen instantly with a keypress (Ctrl+B).",
     "permissions": [
         "storage",
         "activeTab",
